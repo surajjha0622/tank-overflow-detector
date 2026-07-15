@@ -5,7 +5,7 @@
 ![Tank Overflow detector](screenshot.webp)
 
 
-> Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1.4 hours of work.
+> Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~2.1 hours of work.
 
 
 
@@ -30,15 +30,21 @@ Connections
 - -> GND 
 S -> A0
 3. RGB Led
-R->220ohm resistor ->A1
-G->220ohm resistor -> A2
-B-> 220ohm resistor ->A3
+R->D6
+G-> D5
+B-> D3
 - -> GND
+4. Connect the LCD Pins to respective pins on I2C Connector
+and then you will get 4 Pins as follows:
+VCC->5V
+GND->GND
+SDA->A4
+SCL->A5
 
 Upload the code in the firmware 
 and it should work now
 
-Note:- You may adjust the threshold as per your need
+Note:- You may adjust the threshold as per your requirements
 
 
 ## Demo
@@ -56,10 +62,10 @@ The editor snapshot is in `breadboard-project.json`.
 
 | Part | Quantity |
 | --- | --- |
-| breadboard-full | 1 |
 | buzzer-active | 1 |
+| lcd1602 | 1 |
+| lcd1602-i2c | 1 |
 | remote-led-module | 1 |
-| resistor-220 | 3 |
 | water-level-sensor | 1 |
 
 
@@ -77,7 +83,7 @@ Build journal entries are kept in [`journals.md`](journals.md).
 
 
 
-*Made in [Breadboard](https://breadboard.hackclub.com) — 1.4h of work*
+*Made in [Breadboard](https://breadboard.hackclub.com) — 2.1h of work*
 
 
 
