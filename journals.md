@@ -9,3 +9,9 @@ I added a RGB light to show status of tanks level currently just 3 indicators Re
 I also added a Buzzer which activates upon crossing the maximum threshhold value of the water level.
  
 yup thats it.......
+
+---
+
+## Jul 15, 2026, 9:59 AM
+
+I added lcd to display the status of tank level as 'low', 'medium' and 'full'.
