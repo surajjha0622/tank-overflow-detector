@@ -12,7 +12,6 @@ void setup() {
   pinMode(red, OUTPUT);
   pinMode(green , OUTPUT);
   pinMode(blue , OUTPUT);
-  
   //Initialising Serial Monitor at 9600 baudrate
   Serial.begin(9600);
   
@@ -27,8 +26,10 @@ void setup() {
 
 void loop() {
 
-  int level = analogRead(WaterLevel);
+  int level = 0;
+  level = analogRead(WaterLevel);
   Serial.println(level);
+  delay(200);
 
   if (level < min_Thr){
 
@@ -54,7 +55,7 @@ void loop() {
     digitalWrite(buzzer, HIGH);   
 
  }
-  delay(300);
+  delay(100);
 
 
 }
