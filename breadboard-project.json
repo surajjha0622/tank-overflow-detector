@@ -5,18 +5,18 @@
     {
       "id": "arduino-uno",
       "boardKind": "arduino-uno",
-      "x": -682.6950639781386,
-      "y": -532.8704840557418,
+      "x": -671.9018734234301,
+      "y": -647.2783039356527,
       "activeFileGroupId": "group-arduino-uno",
       "languageMode": "arduino",
-      "serialBaudRate": 0
+      "serialBaudRate": 9615
     }
   ],
   "fileGroups": {
     "group-arduino-uno": [
       {
         "name": "sketch.ino",
-        "content": "const int WaterLevel = A0;\nconst int buzzer = 12;\nconst int red = A1;\nconst int green = A2;\nconst int blue = A3;\nconst int max_Thr=600;\nconst int min_Thr=300;\n\nvoid setup() {\n  //Defining pinMode\n  pinMode(buzzer , OUTPUT);\n  pinMode(red, OUTPUT);\n  pinMode(green , OUTPUT);\n  pinMode(blue , OUTPUT);\n  \n  //Initialising Serial Monitor at 9600 baudrate\n  Serial.begin(9600);\n  \n  Serial.println(\"Serial Monitor Begins....\");\n  Serial.println(\"GhOsT RoCks\");\n  Serial.println(\"Enter water level (0-1023):\");\n\n  \n  \n\n}\n\nvoid loop() {\n\n  int level = analogRead(WaterLevel);\n  Serial.println(level);\n\n  if (level < min_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, HIGH);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, LOW);\n\n  }\n  else if (level < max_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, HIGH);\n    digitalWrite(buzzer, LOW);\n\n  }\n else {\n\n    digitalWrite(red, HIGH);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, HIGH);   \n\n }\n  delay(300);\n\n\n}"
+        "content": "const int WaterLevel = A0;\nconst int buzzer = 12;\nconst int red = A1;\nconst int green = A2;\nconst int blue = A3;\nconst int max_Thr=600;\nconst int min_Thr=300;\n\nvoid setup() {\n  //Defining pinMode\n  pinMode(buzzer , OUTPUT);\n  pinMode(red, OUTPUT);\n  pinMode(green , OUTPUT);\n  pinMode(blue , OUTPUT);\n  //Initialising Serial Monitor at 9600 baudrate\n  Serial.begin(9600);\n  \n  Serial.println(\"Serial Monitor Begins....\");\n  Serial.println(\"GhOsT RoCks\");\n  Serial.println(\"Enter water level (0-1023):\");\n\n  \n  \n\n}\n\nvoid loop() {\n\n  int level = 0;\n  level = analogRead(WaterLevel);\n  Serial.println(level);\n  delay(200);\n\n  if (level < min_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, HIGH);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, LOW);\n\n  }\n  else if (level < max_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, HIGH);\n    digitalWrite(buzzer, LOW);\n\n  }\n else {\n\n    digitalWrite(red, HIGH);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, HIGH);   \n\n }\n  delay(100);\n\n\n}"
       }
     ]
   },
@@ -27,7 +27,7 @@
       "x": -343.17857578424764,
       "y": -659.0008858169459,
       "properties": {
-        "level": 100
+        "level": 7
       }
     },
     {
@@ -117,8 +117,16 @@
           "y": -315.91280801666926
         },
         {
-          "x": -474.6950639781386,
+          "x": -466.3611648316038,
           "y": -315.91280801666926
+        },
+        {
+          "x": -466.3611648316038,
+          "y": -316.65484955478206
+        },
+        {
+          "x": -463.90187342343006,
+          "y": -316.65484955478206
         }
       ],
       "id": "wire-1784102600259",
@@ -131,8 +139,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "A0",
-        "x": -474.6950639781386,
-        "y": -341.3704840557418
+        "x": -463.90187342343006,
+        "y": -455.77830393565273
       },
       "color": "#22c55e"
     },
@@ -157,8 +165,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "GND.1",
-        "x": -567.1950639781386,
-        "y": -523.8704840557418
+        "x": -556.4018734234301,
+        "y": -638.2783039356527
       },
       "color": "#000000"
     },
@@ -174,8 +182,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "GND.3",
-        "x": -503.6950639781386,
-        "y": -341.3704840557418
+        "x": -492.90187342343006,
+        "y": -455.77830393565273
       },
       "color": "#000000"
     },
@@ -191,8 +199,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "12",
-        "x": -548.1950639781386,
-        "y": -523.8704840557418
+        "x": -537.4018734234301,
+        "y": -638.2783039356527
       },
       "color": "#cc0000"
     },
@@ -208,8 +216,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "5V",
-        "x": -522.6950639781386,
-        "y": -341.3704840557418
+        "x": -511.90187342343006,
+        "y": -455.77830393565273
       },
       "color": "#cc0000"
     },
@@ -285,8 +293,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "GND.2",
-        "x": -513.1950639781386,
-        "y": -341.3704840557418
+        "x": -502.40187342343006,
+        "y": -455.77830393565273
       },
       "color": "#000000"
     },
@@ -302,8 +310,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "A1",
-        "x": -465.1950639781386,
-        "y": -341.3704840557418
+        "x": -454.40187342343006,
+        "y": -455.77830393565273
       },
       "color": "#22c55e"
     },
@@ -319,8 +327,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "A2",
-        "x": -455.6950639781386,
-        "y": -341.3704840557418
+        "x": -444.90187342343006,
+        "y": -455.77830393565273
       },
       "color": "#22c55e"
     },
@@ -336,8 +344,8 @@
       "end": {
         "componentId": "arduino-uno",
         "pinName": "A3",
-        "x": -446.1950639781386,
-        "y": -341.3704840557418
+        "x": -435.40187342343006,
+        "y": -455.77830393565273
       },
       "color": "#22c55e"
     }
