@@ -2,7 +2,7 @@
 
 
 
-
+![Tank Overflow detector](screenshot.webp)
 
 
 > Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1.4 hours of work.
