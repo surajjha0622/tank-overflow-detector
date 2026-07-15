@@ -1,0 +1,347 @@
+{
+  "format": "velxio-project",
+  "version": 1,
+  "boards": [
+    {
+      "id": "arduino-uno",
+      "boardKind": "arduino-uno",
+      "x": -682.6950639781386,
+      "y": -532.8704840557418,
+      "activeFileGroupId": "group-arduino-uno",
+      "languageMode": "arduino",
+      "serialBaudRate": 0
+    }
+  ],
+  "fileGroups": {
+    "group-arduino-uno": [
+      {
+        "name": "sketch.ino",
+        "content": "const int WaterLevel = A0;\nconst int buzzer = 12;\nconst int red = A1;\nconst int green = A2;\nconst int blue = A3;\nconst int max_Thr=600;\nconst int min_Thr=300;\n\nvoid setup() {\n  //Defining pinMode\n  pinMode(buzzer , OUTPUT);\n  pinMode(red, OUTPUT);\n  pinMode(green , OUTPUT);\n  pinMode(blue , OUTPUT);\n  \n  //Initialising Serial Monitor at 9600 baudrate\n  Serial.begin(9600);\n  \n  Serial.println(\"Serial Monitor Begins....\");\n  Serial.println(\"GhOsT RoCks\");\n  Serial.println(\"Enter water level (0-1023):\");\n\n  \n  \n\n}\n\nvoid loop() {\n\n  int level = analogRead(WaterLevel);\n  Serial.println(level);\n\n  if (level < min_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, HIGH);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, LOW);\n\n  }\n  else if (level < max_Thr){\n\n    digitalWrite(red, LOW);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, HIGH);\n    digitalWrite(buzzer, LOW);\n\n  }\n else {\n\n    digitalWrite(red, HIGH);\n    digitalWrite(green, LOW);\n    digitalWrite(blue, LOW);\n    digitalWrite(buzzer, HIGH);   \n\n }\n  delay(300);\n\n\n}"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "water_level_sensor_1784102192863_t5lf8mxss",
+      "metadataId": "water-level-sensor",
+      "x": -343.17857578424764,
+      "y": -659.0008858169459,
+      "properties": {
+        "level": 100
+      }
+    },
+    {
+      "id": "buzzer_active_1784102234983_oja9jtk9b",
+      "metadataId": "buzzer-active",
+      "x": -559.0118583260511,
+      "y": -965.5812038590872,
+      "properties": {
+        "active": false
+      }
+    },
+    {
+      "id": "breadboard_full_1784102897736_l76obhlkw",
+      "metadataId": "breadboard-full",
+      "x": -996.4241333952697,
+      "y": -130.75281241788934,
+      "properties": {
+        "state": false,
+        "value": false
+      }
+    },
+    {
+      "id": "remote_led_module_1784102990424_sjj4l7qv5",
+      "metadataId": "remote-led-module",
+      "x": -515.3611648316038,
+      "y": 141.82404974994012,
+      "properties": {}
+    },
+    {
+      "id": "resistor_220_1784103010284_y6mx3ka01",
+      "metadataId": "resistor-220",
+      "x": -894.6241333952697,
+      "y": -64.40281241788935,
+      "properties": {
+        "value": "220"
+      },
+      "attachedTo": {
+        "breadboardId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinMap": {
+          "1": "C9",
+          "2": "C15"
+        }
+      }
+    },
+    {
+      "id": "resistor_220_1784103016214_3l8pguo3f",
+      "metadataId": "resistor-220",
+      "x": -798.6241333952697,
+      "y": -64.40281241788935,
+      "properties": {
+        "value": "220"
+      },
+      "attachedTo": {
+        "breadboardId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinMap": {
+          "1": "C19",
+          "2": "C25"
+        }
+      }
+    },
+    {
+      "id": "resistor_220_1784103021898_6ahfjy20s",
+      "metadataId": "resistor-220",
+      "x": -645.0241333952697,
+      "y": -64.40281241788935,
+      "properties": {
+        "value": "220"
+      },
+      "attachedTo": {
+        "breadboardId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinMap": {
+          "1": "C35",
+          "2": "C41"
+        }
+      }
+    }
+  ],
+  "wires": [
+    {
+      "waypoints": [
+        {
+          "x": -293.78861735072473,
+          "y": -573.0008858169459
+        },
+        {
+          "x": -293.78861735072473,
+          "y": -315.91280801666926
+        },
+        {
+          "x": -474.6950639781386,
+          "y": -315.91280801666926
+        }
+      ],
+      "id": "wire-1784102600259",
+      "start": {
+        "componentId": "water_level_sensor_1784102192863_t5lf8mxss",
+        "pinName": "S",
+        "x": -294.17857578424764,
+        "y": -573.0008858169459
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "A0",
+        "x": -474.6950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [
+        {
+          "x": -269.17857578424764,
+          "y": -500.1569594752248
+        },
+        {
+          "x": -567.1950639781386,
+          "y": -500.1569594752248
+        }
+      ],
+      "id": "wire-1784102627752",
+      "start": {
+        "componentId": "water_level_sensor_1784102192863_t5lf8mxss",
+        "pinName": "-",
+        "x": -269.17857578424764,
+        "y": -573.0008858169459
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.1",
+        "x": -567.1950639781386,
+        "y": -523.8704840557418
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784102708075",
+      "start": {
+        "componentId": "buzzer_active_1784102234983_oja9jtk9b",
+        "pinName": "-",
+        "x": -499.0118583260511,
+        "y": -901.5812038590872
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.3",
+        "x": -503.6950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784102714012",
+      "start": {
+        "componentId": "buzzer_active_1784102234983_oja9jtk9b",
+        "pinName": "+",
+        "x": -539.0118583260511,
+        "y": -901.5812038590872
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "12",
+        "x": -548.1950639781386,
+        "y": -523.8704840557418
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784102756545",
+      "start": {
+        "componentId": "water_level_sensor_1784102192863_t5lf8mxss",
+        "pinName": "+",
+        "x": -319.17857578424764,
+        "y": -573.0008858169459
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "5V",
+        "x": -522.6950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [
+        {
+          "x": -639.9856266332778,
+          "y": -59.968180262263985
+        },
+        {
+          "x": -639.9856266332778,
+          "y": 225.82404974994012
+        }
+      ],
+      "id": "wire-1784103073588",
+      "start": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "D15",
+        "x": -831.0241333952697,
+        "y": -42.752812417889345
+      },
+      "end": {
+        "componentId": "remote_led_module_1784102990424_sjj4l7qv5",
+        "pinName": "R",
+        "x": -496.3611648316038,
+        "y": 225.82404974994012
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103155915",
+      "start": {
+        "componentId": "remote_led_module_1784102990424_sjj4l7qv5",
+        "pinName": "G",
+        "x": -481.3611648316038,
+        "y": 225.82404974994012
+      },
+      "end": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "D25",
+        "x": -735.0241333952697,
+        "y": -42.752812417889345
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103179657",
+      "start": {
+        "componentId": "remote_led_module_1784102990424_sjj4l7qv5",
+        "pinName": "B",
+        "x": -466.3611648316038,
+        "y": 225.82404974994012
+      },
+      "end": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "E35",
+        "x": -639.0241333952697,
+        "y": -32.752812417889345
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103201895",
+      "start": {
+        "componentId": "remote_led_module_1784102990424_sjj4l7qv5",
+        "pinName": "GND",
+        "x": -451.3611648316038,
+        "y": 225.82404974994012
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.2",
+        "x": -513.1950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103274256",
+      "start": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "B9",
+        "x": -888.6241333952697,
+        "y": -62.752812417889345
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "A1",
+        "x": -465.1950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103300448",
+      "start": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "A19",
+        "x": -792.6241333952697,
+        "y": -72.75281241788934
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "A2",
+        "x": -455.6950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1784103309621",
+      "start": {
+        "componentId": "breadboard_full_1784102897736_l76obhlkw",
+        "pinName": "E41",
+        "x": -581.4241333952697,
+        "y": -32.752812417889345
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "A3",
+        "x": -446.1950639781386,
+        "y": -341.3704840557418
+      },
+      "color": "#22c55e"
+    }
+  ],
+  "activeBoardId": "arduino-uno",
+  "ignoreStock": false
+}
